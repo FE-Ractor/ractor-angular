@@ -1,0 +1,24 @@
+{
+  "name": "ractor-angular",
+  "version": "1.0.0",
+  "description": "ractor state management for angular",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -fr dist & tsc",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "ractor",
+    "angular"
+  ],
+  "author": "corol",
+  "license": "ISC",
+  "dependencies": {},
+  "peerDependencies": {
+    "@angular/core": "^4.4.3",
+    "ractor": "^1.0.2",
+    "rxjs": "^5.4.3"
+  }
+}
