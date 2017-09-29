@@ -1,6 +1,6 @@
 {
   "name": "ractor-angular",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "ractor state management for angular",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
