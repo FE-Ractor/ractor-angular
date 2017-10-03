@@ -4,12 +4,12 @@ import { system } from "ractor"
 
 import { AppComponent } from "./app.component";
 import { AppStore } from "./app.store"
-import { StoreModule } from "ractor-angular"
+import { provideStore } from "ractor-angular"
 
 @NgModule({
   imports: [
     BrowserModule,
-    StoreModule.provideStore(AppStore)
+    provideStore(AppStore)
   ],
   declarations: [
     AppComponent

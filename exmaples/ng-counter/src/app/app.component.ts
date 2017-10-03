@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from "@angular/core"
 import { AppStore } from "./app.store"
-import { dispatch } from "ractor"
+import { dispatch, Subscription } from "ractor"
 import { Increment } from "./Increment"
 import { Decrement } from "./Decrement"
 
@@ -30,18 +30,18 @@ import { Decrement } from "./Decrement"
 })
 export class AppComponent implements OnInit, OnDestroy {
   public value: number
-  public unsubscribe: () => void
+  public subscription: Subscription
 
   constructor(public appStore: AppStore) { }
 
   public ngOnInit() {
-    this.unsubscribe = this.appStore.subscribe(state => {
+    this.subscription = this.appStore.subscribe(state => {
       this.value = state.value
     })
   }
 
   public ngOnDestroy() {
-    this.unsubscribe()
+    this.subscription.unsubscribe()
   }
 
   public increment() {
