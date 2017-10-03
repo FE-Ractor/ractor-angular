@@ -11,7 +11,6 @@ export type StoreService = {
   name: string
 }
 
-// 这个函数不放到外面会出错：encountered resolving symbol values statically.
 export function mapStoreToProvider(store: StoreService) {
   return [
     { provide: store, useFactory: _storeFactory, deps: [store.name] },
@@ -19,13 +18,14 @@ export function mapStoreToProvider(store: StoreService) {
   ]
 }
 
-@NgModule({})
-export class StoreModule {
-  static provideStore(...stores: Array<StoreService>): ModuleWithProviders {
-    const providers = stores.map(mapStoreToProvider)
-    return {
-      ngModule: StoreModule,
-      providers
-    }
+// 这个函数不放到外面会出错：encountered resolving symbol values statically.
+export function provideStore(...stores: Array<StoreService>): ModuleWithProviders {
+  const providers = stores.map(mapStoreToProvider)
+  return {
+    ngModule: StoreModule,
+    providers
   }
 }
+
+@NgModule({})
+export class StoreModule { }

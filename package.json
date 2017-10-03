@@ -1,6 +1,6 @@
 {
   "name": "ractor-angular",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "ractor state management for angular",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,10 +15,13 @@
   ],
   "author": "corol",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@angular/core": "^4.4.4",
+    "ractor": "^1.0.6"
+  },
   "peerDependencies": {
     "@angular/core": "^4.4.3",
-    "ractor": "^1.0.2",
+    "ractor": "^1.0.6",
     "rxjs": "^5.4.3"
   }
 }
